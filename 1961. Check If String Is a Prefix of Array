@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isPrefixString(String s, String[] words) {
+        StringBuilder sb = new StringBuilder();
+        for(String str : words){
+            sb.append(str);
+            if(sb.toString().equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+public static void main(String[] args) {
+        PrefixStringChecker checker = new PrefixStringChecker();
+        // Test case
+        String s = "iloveleetcode";
+        String[] words = {"i", "love", "leetcode", "apples"};
+        
+        boolean result = checker.isPrefixString(s, words);
+        System.out.println("Is prefix string: " + result); // Output: true
+    }
+}

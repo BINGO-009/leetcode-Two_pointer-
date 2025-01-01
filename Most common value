@@ -1,0 +1,39 @@
+CHAT GPT SOLUTION (41/41) 
+class Solution {
+    public int getCommon(int[] nums1, int[] nums2) {
+        int i = 0, j = 0; // Two pointers
+
+        // Traverse both arrays
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                return nums1[i]; // Found the minimum common value
+            } else if (nums1[i] < nums2[j]) {
+                i++; // Move pointer i forward
+            } else {
+                j++; // Move pointer j forward
+            }
+        }
+
+        return -1; // No common value found
+    }
+}
+My SOLUTION (10/41)
+
+class Solution {
+    public int getCommon(int[] nums1, int[] nums2) {
+        int min=0;
+        int i;
+        for(i=0;i<nums1.length;i++){
+            for(int j=0;j<nums2.length;j++){
+                if(nums1[i] == nums2[j]){
+                    min =nums1[i];
+                    if(nums2[j] < min){
+                        min =nums2[j];
+                    }
+                }
+            }
+        }
+        return min;
+    }
+}
+
